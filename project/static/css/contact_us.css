@@ -1,0 +1,94 @@
+body {
+    background-color: #f5ebeb;
+    font-family: sans-serif;
+}
+
+section {
+    min-height: calc(100vh - 140px);
+}
+
+form {
+    border-radius: 15px;
+    margin: 30px 10px 30px 20px;
+    background-color: #d5b4b4;
+    padding: 25px 70px 15px;
+    width: 40%;
+    height: 70%;
+    font-family: sans-serif;
+    display: inline-block;
+
+}
+
+section h1 {
+    text-align: center;
+    color: #867070;
+    font-family: sans-serif;
+    font-size: 3vw;
+    ;
+    margin-top: 10px;
+
+
+}
+
+form h4 {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    color: #746060;
+    font-family: sans-serif;
+    font-style: bold;
+    text-transform: uppercase;
+
+}
+
+form input,
+textarea {
+    border: 2px solid #d5b4b4;
+    position: center;
+    display: block;
+    margin: 5px 20px 20px 20px;
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    resize: none;
+    outline: none;
+}
+
+form input {
+    color: #867070;
+}
+
+form input,
+textarea:hover {
+    border-color: #d5b4b4
+}
+
+form input[type="submit"] {
+    background-color: #867070;
+    padding: 10px;
+    margin-left: 70%;
+    color: #f5ebeb;
+    background-color: #867070;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: medium;
+    width: fit-content;
+   
+
+}
+
+form label {
+    color: #867070;
+    font-family: sans-serif;
+
+}
+
+.pic{
+    width: 500px;
+    height: 390px;
+    display: inline-block;
+    margin-left: 30px;
+    background-image: url("../images/contact-icon.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,153 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+nav {
+    width: calc(100%-10px);
+    font-size: 15px;
+    font-weight: 600;
+    color: #f5ebeb;
+    font-family: sans-serif;
+    padding: 5px;
+    height: 50px;
+    background-color: #867070;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    z-index: 1000;
+}
+
+#search {
+    justify-self: end;
+    height: 25px;
+    display: none;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav>ul {
+    width: 700px;
+    padding: 0 15px;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav>ul>li {
+    text-wrap: nowrap;
+    padding: 5px;
+    border-radius: 10px;
+    display: inline-block;
+    min-width: 70px;
+    text-align: center;
+    transition: 0.2s;
+
+}
+
+nav h3 {
+    justify-self: start;
+    color: #d5b4b4;
+    font-weight: bolder;
+    margin-left: 10px;
+}
+
+.account {
+    background-color: #dca9a9;
+    color: #867070;
+    margin-left: 5px;
+    width: 100px;
+}
+
+.account:hover {
+    background-color: #867070;
+    color: #f5ebeb;
+    outline: #d5b4b4 solid 2px;
+}
+
+nav ul ul {
+    display: none;
+    list-style: none;
+    font-weight: 400;
+    background-color: inherit;
+    position: absolute;
+    background-color: #867070;
+    color: #f5ebeb;
+    height: fit-content;
+    min-height: 150px;
+    padding: 5px;
+    border-radius: 10px;
+    width: 100px;
+    margin-top: 5px;
+    margin-left: -15px;
+}
+
+.account ul {
+    margin-top: 6px;
+    margin-left: -3px;
+}
+
+
+nav ul ul li {
+    padding: 5px;
+    padding-block: 10px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    transition: 0.2s;
+
+}
+
+nav ul ul li a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+nav ul li button {
+    background-color: inherit;
+    border: none;
+    font-style: inherit;
+    font-weight: 400;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+
+}
+
+.logout {
+    background-color: #cb3e3e;
+}
+
+nav>ul>li:hover {
+    background-color: #d5b4b4;
+    color: #867070;
+    cursor: pointer;
+
+}
+
+nav ul li:hover,
+nav ul ul:hover {
+    ul {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-around;
+        align-content: center;
+    }
+}
+
+nav ul ul li:hover {
+    background-color: #d5b4b4;
+    color: #867070;
+}
+
+.logout:hover {
+    background-color: #bb2323;
+    color: #f5ebeb;
+}

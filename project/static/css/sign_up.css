@@ -1,0 +1,104 @@
+
+section {
+    min-height: calc(100vh - 130px);
+    width: auto;
+    padding: 0 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: center;
+    background-color: #f5ebeb;
+    color: #867070;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+
+
+form {
+    height: fit-content;
+    width: fit-content;
+    padding: 10px 50px;
+    font-family: sans-serif;
+}
+
+.pic {
+    flex-shrink: 1;
+    width: 700px;
+    background-image: url("../images/s.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+h1 {
+    margin: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+[type='text'],
+[type='email'],
+[type='password'] {
+    display: block;
+    border-radius: 10px;
+    margin: 10px 50px;
+    width: 250px;
+    padding: 5px;
+    border-color: #867070;
+    border-style: solid;
+    color: #867070;
+    font-weight: 500;
+
+}
+
+[type='text']:focus,
+[type='email']:focus,
+[type='password']:focus {
+    outline: none;
+}
+
+[type='submit'],
+[type='reset'] {
+    display: block;
+    height: 35px;
+    border-radius: 10px;
+    width: 100%;
+    margin: 15px;
+    border: none;
+}
+
+[type='submit'] {
+
+    background-color: #867070;
+    color: #f5ebeb;
+    font-family: sans-serif;
+    font-weight: 600;
+    
+
+
+}
+
+[type='reset'] {
+    background-color: #e4d0d0;
+    color: #867070;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+input [type='radio'] {
+    display: block;
+}
+
+.radio {
+    display: block;
+}
+
+.is_admin {
+    margin: 20px;
+}
+
+.is_admin input {
+    margin-left: 50px;
+}
+

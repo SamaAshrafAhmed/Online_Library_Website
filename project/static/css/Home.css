@@ -1,0 +1,82 @@
+section {
+    min-height: calc(100vh - 130px);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    background-color: #f5ebeb;
+    color: #867070;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin: 0;
+}
+
+.welcom {
+    flex-shrink: 1;
+    width: 500px;
+    margin-left: 20px;
+
+}
+
+h1 {
+    margin: 10px;
+    font-size: 60px;
+    text-align: top;
+    color: #867070;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.first1 .log {
+    color: #867070;
+    font-size: 32px;
+}
+
+.content {
+    width: 500px;
+    margin-top: 20px;
+    margin-inline: 30px;
+}
+
+.welcom a {
+    display: inline-block;
+    width: 150px;
+    height: 80px;
+    padding: 5px;
+    padding-top: 45px;
+    text-align: center;
+    border-color: #867070;
+    border-style: double;
+    color: #867070;
+    background-color: #e4d0d0;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+.view {
+    border-radius: 5px 50% 5px 50%;
+}
+
+.about {
+    border-radius: 50% 5px 50% 5px;
+}
+
+.welcom a:hover {
+    background-color: #d5b4b4;
+}
+
+
+.pic {
+    width: 550px;
+    height: 500px;
+    margin-left: 100px;
+    /* background-color: #d5b4b439;
+    border-radius: 5px 50% 5px 50%; */
+
+    background-image: url("../images/Free_Vector___Watercolor_literature_illustration-removebg-preview.png");
+
+    background-repeat: no-repeat;
+    background-size: contain;
+}

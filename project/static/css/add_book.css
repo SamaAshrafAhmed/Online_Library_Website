@@ -1,0 +1,114 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 130px);
+    color: #867070;
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/add_book.jpeg") no-repeat center;
+    background-size: cover;
+    z-index: -1;
+    filter: blur(50px);
+}
+
+.add_book-box {
+    max-width: 850px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #F5EBEB;
+}
+
+.left {
+    height: 100%;
+    background: url("../images/add_book.jpeg") no-repeat center;
+    background-size: cover;
+}
+
+.right {
+    padding: 50px 40px;
+}
+
+h1 {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 100px;
+    border-radius: 2px;
+    background-color: #D5B4B4;
+}
+
+.right .inputs input {
+    width: 55%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    border: 2px solid #867070;
+    font-size: 16px;
+    color: #867070;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.file {
+    width: 100%;
+    padding-inline: 10%;
+
+}
+
+.right .input2 input {
+    background-color: #867070;
+    color: #F5EBEB;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 550;
+    border-color: #867070;
+    padding: 5px;
+    width: 150px;
+}
+
+.right .input2 input:hover {
+    background-color: #867070ac;
+
+}
+
+#error1,
+#error2,
+#error3,
+#error4,
+#error5 {
+    display: none;
+    font-size: 13px;
+}
