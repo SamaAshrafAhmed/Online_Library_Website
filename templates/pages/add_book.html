@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{%load static%}
+
+
+{% block headcontent %}
+<title>Add Book</title>
+<link rel="stylesheet" href="{%static 'css\add_book.css'%}">
+{% endblock headcontent %}
+
+
+{% block content %}
+<div class="container">
+    <div class="add_book-box">
+        <div class="left"></div>
+        <div class="right">
+
+            <h1>Add Book </h1>
+            <br>
+            <form method="POST" enctype="multipart/form-data">
+                {%csrf_token%}
+
+                {% if error_message %}
+                <div id="error1" style="color: red; display: block;">{{error_message}}</div>
+                {%endif%}
+
+                <div class="inputs">
+                    <label for="Book Name">Book Name</label>
+                    <input type="text" name="Book_Name" id="Book Name" required>
+                    <br><br>
+                    <label for="Author">Author</label>
+                    <input type="text" name="Author" id="Author" required>
+                    <br><br>
+                    <label for="Category">Category</label>
+                    <input type="text" name="Category" id="Category" required>
+                    <br><br>
+                    <label for="Description">Description</label>
+                    <input type="text" name="Description" id="Description" required>
+                </div>
+                <br>
+                <div class="file">
+                    <label for="Choose_File">Choose File</label>
+                    <input type="file" name="Choose_File" id="Choose_File" required>
+                </div>
+                <br>
+                <div class="input2">
+                    <input type="submit" value="Add Book" id="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{%endblock content%}

@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+{%load static%}
+
+{% block headcontent %}
+<title>About Us</title>
+<link rel="stylesheet" href="{% static 'css\aboutUs.css' %}">
+
+{% endblock headcontent %}
+
+{% block content %}
+<div class="head">
+    <h1>ABOUT US </h1>
+</div>
+<div class="container">
+    <section class="AboutUs">
+        <div class="About-image">
+            <img src="{%static 'images\about_us.jpeg'%}">
+        </div>
+        <div class="About-content">
+            <p>Welcome to [Library Name], your virtual gateway to a world of knowledge and learning.</p>
+            <h4>Our Services:</h4>
+            <p>1-Extensive collection of e-books, audiobooks, and digital resources across various genres and
+                subjects.</p>
+            <p>2-User-friendly platform for easy navigation and discovery of content.</p>
+            <p>3-Personalized recommendations and curated collections to cater to diverse interests and
+                preferences.</p>
+            <p>4-Accessible formats for individuals with disabilities, ensuring inclusivity for all readers.</p>
+            <p>5-Community forums and discussion groups to facilitate interaction and exchange of ideas among
+                members.</p>
+            <h4>Our Team:</h4>
+            <p>Behind [Library Name] is a dedicated team of librarians, educators, and technology enthusiasts
+                passionate</p>
+            <p>about promoting literacy and lifelong learning.</p>
+            <p>Together, we strive to innovate and enhance the online library experience for our users.</p>
+            <h4>Partnerships: </h4>
+            <p>We collaborate with publishers, authors, educational institutions, and organizations worldwide to
+            </p>
+            <p>expand our collection and offer exclusive resources to our members.</p>
+            <br><br><br><br>
+            <p>Join us on our journey to explore the vast realms of literature and knowledge.</p>
+            <p>Together, shall we embark on a lifelong adventure of discovery and enlightenment.</p>
+
+            <a href="{% url 'contact_us' %}" class="contact-us">CONTACT US</a>
+        </div>
+    </section>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{% block headcontent %}
+<title>Admin Profile</title>
+<link rel="stylesheet" href="{% static 'css\profile.css' %}">
+{% endblock headcontent %}
+
+{% block content %}
+<div class="container">
+    <div class="pic"></div>
+    {%if request.session.user_id%}
+    <div class="name">Name <div class="userName" id="adminName">{{request.session.FirstName}}
+            {{request.session.LastName}}</div>
+    </div>
+    <div class="mail">E-mail <div class="userMail" id="adminMail">{{request.session.UserMail}}</div>
+    </div>
+    <div class="buttons">
+        <a href="{% url 'edit_profile' %}">Edit Profile</a>
+        <button id="logoutBtn2">Logout</button>
+    </div>
+    {%endif%}
+
+</div>
+<div class="background"></div>
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'js\profile.js' %}"></script>
+
+{% endblock js %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{% block headcontent %}
+<title>Edit Profile</title>
+<link rel="stylesheet" href="{% static 'css\edit_profile.css' %}">
+{% endblock headcontent %}
+
+{% block content %}
+
+<form class="page" method="POST">
+    {%csrf_token%}
+    <h3>Edit Profile</h3>
+    {%if error_message%}
+    <div class="error">{{error_message}}</div>
+    {%endif%}
+
+
+    {% if request.session.user_id %}
+    <div class="user">
+        <label for="userFn">First Name</label>
+        <input id="userFn" type="text" value="{{request.session.FirstName}}" placeholder="username" name="FirstName"
+            required>
+
+        <label for="userLn">Last Name</label>
+        <input id="userLn" type="text" value="{{request.session.LastName}}" placeholder="username" name="LastName"
+            required>
+
+    </div>
+    <div class="em">
+        <label for="userem">Email</label>
+
+        <input id="userem" type="email" value="{{request.session.UserMail}} " placeholder="email" name="UserMail"
+            required>
+    </div>
+    <div class="pass">
+        <label for="userp">Password</label>
+        <input id="userp" type="text" placeholder="password" minlength="5" maxlength="12"
+            value="{{request.session.UserPass}}" name="UserPass">
+
+    </div>
+    <div class="a">
+        <input type="submit" class="save" id="save" value="Save">
+        {%if request.session.user_role == 'admin' %}
+        <a href="{% url 'admin_profile' %}" class='cancel'>Cancel </a>
+        {% endif %}
+
+        {%if request.session.user_role == 'reader' %}
+        <a href="{% url 'user_profile' %}" class='cancel'>Cancel </a>
+        {% endif %}
+    </div>
+    
+    {% endif %}
+</form>
+
+{%endblock content%}

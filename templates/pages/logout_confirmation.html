@@ -1,0 +1,28 @@
+
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="{% static 'css\logout_confirmation.css' %}">
+   
+    <title>Logout Confirmed</title>
+</head>
+
+<body>
+
+    <div class="logout">
+        <div class="pic"></div>
+        <h1 class="loggedOut">Logged Out Successfully</h1>
+        <h1>Visit Us Soon :) </h1>
+<a href="{% url 'index' %}"> Home </a>
+<a href="{% url 'login' %}">Login Again</a>
+
+    </div>
+
+</body>
+
+</html>

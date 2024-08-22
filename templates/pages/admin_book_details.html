@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block headcontent %}
+<title>Admin_Book Details</title>
+<link rel="stylesheet" href="{% static 'css/admin_book_details.css' %}">
+{% endblock headcontent %}
+
+{% block content %}
+<section id="booklist">
+    <h1>Welcome Admin</h1>
+    <img src="{{ book.cover_photo.url }}" alt="{{ book.title }}" class="book-image"
+        style="display: block; margin-inline: auto; width: 30%; height: 500px;" />
+    <p><strong>Book Title:</strong> {{ book.title }}</p>
+    <p><strong>Author:</strong> {{ book.author }}</p>
+    <p><strong>Category:</strong> {{ book.category }}</p>
+    <p><strong>Description:</strong>
+    <div class="description">{{ book.description }}</div>
+    </p>
+    <p><strong>Availability:</strong> {% if book.isAvailable %} Available {% else %} Not Available {% endif %}</p>
+
+    <div id="links" data-book-id="{{ book.id }}" data-csrf-token="{{ csrf_token }}">
+        <a href="{% url 'edit_book' book.id %}">Edit Book</a>
+        <button id="delete-book-btn" style="background-color: #5a1a1a;">Delete Book</button>
+    </div>
+</section>
+
+{% endblock content %}
+
+{%block js%}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'js/delete.js' %}"></script>
+{%endblock js%}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{% block headcontent %}
+<link rel="stylesheet" href="{% static 'css\login.css' %}">
+<title>Css</title>
+{% endblock headcontent %}
+{% block content %}
+<div class="wrapper">
+    <h1>Log In </h1>
+
+    <span style="font-size: 20px;">New user? </span>
+
+    <div class="create-account">
+        <a href="#">Create an account</a>
+    </div>
+
+    <form id="login_form" method="POST">
+        {% csrf_token %}
+        {%if error_message %}
+        <div id="error" style="color: red; display: block; margin: 5px;">{{error_message}}</div>
+        {%endif%}
+        <div class="input-box">
+            <label for="Email address">Email address</label>
+            <input type="email" name="Email address" id="Email address" required>
+        </div>
+
+        <div class="input-box">
+            <label for="Password">Password</label>
+            <input type="password" name="Password" id="Password" required>
+        </div>
+
+        <input type="submit" class="btn" id="submit" value="Login">
+    </form>
+</div>
+{%endblock content%}
+
+{% block js %}
+
+{% endblock js %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block headcontent %}
+<title>Borrowed Books</title>
+<link rel="stylesheet" href="{% static 'css/user_borrowed_books.css' %}">
+{% endblock headcontent %}
+
+{% block content %}
+<input type="hidden" id="csrf_token" value="{{ csrf_token }}">
+<table border="1">
+  <caption>Borrowed Books</caption>
+  <thead>
+    <tr>
+      <td class="data">Book Name</td>
+      <td class="data">ID</td>
+      <td class="data">Borrowing Status</td>
+      <td class="data">Borrowing Start date</td>
+      <td class="data">Borrowing Due Date</td>
+      <td class="data">Return</td>
+    </tr>
+  </thead>
+  <tbody id="tBody">
+    {% for book in books %}
+    {% if user_id == book.user.id %}
+    <tr>
+      <td>{{ book.book.title }}</td>
+      <td>{{ book.book.id }}</td>
+      {% if book.Borrowing_Status %}
+      <td>Borrowed</td>
+      {% else %}
+      <td>Returned</td>
+      {% endif %}
+      <td>{{ book.start_date }}</td>
+      <td>{{ book.due_date }}</td>
+      <td>
+        {% if book.Borrowing_Status %}
+        <button onclick="returnBook(this, '{{ book.book.id }}')" class="returnBtn">Return</button>
+        {% endif %}
+      </td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'js/return_book.js' %}"></script>
+{% endblock js %}

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{%load static%}
+
+
+{% block headcontent %}
+<link rel="stylesheet" href="{% static 'css\sign_up.css' %}">
+<title>Sign Up</title>
+{% endblock headcontent %}
+
+
+{% block content %}
+<div class="pic"> </div>
+
+<form method="POST" id="sign_up">
+    {% csrf_token %}
+    <h1>Create New Account</h1>
+
+        {% if error_message %}
+        <div style="
+    color: red;
+    display: block;
+    height: fit-content;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    "> {{error_message}}</div>
+        {%endif%}
+    
+    <label for="firstName" id="firstNameLabel">First Name
+    </label>
+
+    <input type="text" name="FirstName" id="firstName" >
+
+    <label for="lastName" id='lastNameLabel'>Last Name
+    </label>
+
+    <input type="text" name="LastName" id="lastName" >
+
+    <label for="mail" id="mailLabel">Mail
+    </label>
+
+    <input type="email" name="UserMail" id="mail" >
+
+    <label for="pass" id="passLabel"> Password
+    </label>
+
+    <input type="password" name="UserPass" id="pass" >
+
+    <label for="confirmPass" id="confirmPassLabel">Confirm Password
+    </label>
+    <input type="password" name="ConfirmPass" id="confirmPass" >
+
+    <label class="radio" id="adminLabel">Sign Up As: <div>content</div>
+    </label>
+    <div class="is_admin">
+        <input type="radio" id="admin" name="is_admin" value="admin"> <label for="admin">Admin</label>
+        <input type="radio" id="reader" name="is_admin" value="reader"> <label for="reader">Reader</label>
+    </div>
+    <input type="submit" value="Create Account" id="submit">
+    <input type="reset" value="Clear" id="reset">
+
+</form>
+{%endblock content%}

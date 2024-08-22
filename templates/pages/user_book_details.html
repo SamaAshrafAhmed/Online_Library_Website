@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block headcontent %}
+<title>Book Details</title>
+<link rel="stylesheet" href="{% static 'css/user_book_details.css' %}">
+{% endblock headcontent %}
+
+{% block content %}
+<h2>Book Details</h2>
+
+<div class="container">
+  <div class="book_cover" id="book_cover">
+    <img src="{{ book.cover_photo.url }}" alt="{{ book.title }}" class="cover">
+  </div>
+  <div class="Bname">
+    <label>Book Name:</label>
+    <div class="content" id="n">{{ book.title }}</div>
+  </div>
+  <div class="author">
+    <label>Author:</label>
+    <div class="content" id="a">{{ book.author }}</div>
+  </div>
+  <div class="category">
+    <label>Category:</label>
+    <div class="content" id="c">{{ book.category }}</div>
+  </div>
+  <div class="description">
+    <label>Description:</label>
+    <div class="content" id="d">{{ book.description }}</div>
+  </div>
+  <div class="borrowing Status">
+    <label>Borrowing Status:</label>
+    <div class="content" id="b">
+      {% if borrowed_book %}
+      {% if borrowed_book.Borrowing_Status %}
+      Yes
+      {% else %}
+      No
+      {% endif%}
+      {% else %}
+      No
+      {% endif %}
+    </div>
+  </div>
+  <div class="availability">
+    <label>Availability:</label>
+    <div class="content" id="v">
+      {% if book.isAvailable %}
+      Available
+      {% else %}
+      Not Available
+      {% endif %}</div>
+  </div>
+
+
+  <form method="post">
+    {% csrf_token %}
+    <label for="date_input" class="dateLabel">Enter Due Date</label>
+    <input type="date" id="date_input" name="date">
+    <input class="borrow" type="submit" value="Borrow Book">
+    {% if error %}
+    <div class="erro" style="color:rgb(166, 6, 6) ;">{{ error }}</div>
+    {% endif %}
+  </form>
+</div>
+
+
+{%endblock content%}

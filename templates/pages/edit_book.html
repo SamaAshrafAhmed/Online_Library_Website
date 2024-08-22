@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block headcontent %}
+<title>Edit Book</title>
+<link rel="stylesheet" href="{% static 'css/edit_book.css' %}">
+{% endblock headcontent %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <h3>Edit Book Details</h3>
+
+    {% if error_message %}
+    <div style="display: block; color: red;">{{ error_message }}</div>
+    {% endif %}
+
+    <label for="BookName" class="c">Book Name</label>
+    <input id="BookName" class="d" type="text" name="BookName" placeholder="Edit_Name"
+        value="{{ book.title }}">
+
+    <label for="Author" class="e">Author</label>
+    <input id="Author" type="text" class="f" name="Author" placeholder="Edit_Author"
+        value="{{book.author }}">
+
+    <label for="Category" class="g">Category</label>
+    <input id="Category" type="text" class="h" name="Category" placeholder="Edit_Category"
+        value="{{ book.category }}">
+
+    <label for="Description" class="i">Description</label>
+    <input id="Description" class="j" type="text" name="Description" placeholder="Edit_Description"
+        value="{{ book.description }}">
+
+    <button type="submit" id="editbook">Edit Book</button>
+</form>
+{% endblock content %}

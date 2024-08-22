@@ -1,0 +1,23 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css\404_error.css' %}">
+    <title>Error</title>
+</head>
+
+<body>
+<div class="pic"></div>
+<div class="error">
+    <h1>Error - 404 </h1>
+    <p>We are sorry ,the page you requested could not be found<br>
+    please go back to the home page</p>
+
+    <a href="{% url 'index' %}">GO HOME</a>
+</div>
+
+</body>
+
+</html>

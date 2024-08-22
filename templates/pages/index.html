@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block headcontent %}
+<title>Home Page</title>
+<link rel="stylesheet" href="{% static 'css\Home.css' %}">
+{% endblock headcontent %}
+
+
+{% block content %}
+<div class="welcom">
+    <h1>There Is No Friend As Loyal As A Book!</h1>
+    <div class="content">
+        <a href="{% url 'view_books' %}" class="view">View Our Books</a>
+        <a href="{% url 'about' %}" class="about"> More About Us</a>
+    </div>
+
+
+
+</div>
+</div>
+<div class="pic"></div>
+{% endblock content %}

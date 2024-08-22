@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{%load static%}
+
+
+{% block headcontent %}
+<title>View Books</title>
+
+<link rel="stylesheet" href="{% static 'css\view_books.css' %}">
+{% endblock headcontent %}
+{% block content %}
+<h3>Welcome To Our Library</h3>
+<div>
+    <ul id="booklist">
+        {% for book in books %}
+        <div class="book" data-book-id="{{book.id}}">
+            <div class="book_info">
+                <img src="{{book.cover_photo.url}}" alt="{{book.title}}">
+                <h2>{{book.title}}</h2>
+                <p><strong>Category:</strong> {{book.category}}</p>
+                <p><strong>By:</strong> {{book.author}}</p>
+                <p class="heart">❤</p>
+            </div>
+        </div>
+        {%endfor%}
+
+        {% if request.session.user_id%}
+        {% if request.session.user_role == 'reader' %}
+        <div id="urltemp" data-url="{%url 'user_book_details' user_id=0 book_id=0  %}">
+        </div>
+        {%endif%}
+        {% if request.session.user_role == 'admin' %}
+        <div id="urltemp" data-url="{%url 'admin_book_details' book_id=0  %}">
+        </div>
+        {%endif%}
+        {%endif%}
+
+        <div id="userid" data-user-id="{{ request.session.user_id }}"></div>
+        <div id="userole" data-user-role="{{ request.session.user_role }}"></div>
+
+    </ul>
+</div>
+{%endblock content%}
+
+{% block js %}
+<script src="{% static 'js\view_books.js' %}"></script>
+{% endblock js %}
